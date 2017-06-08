@@ -13,7 +13,7 @@
     @foreach($states as $state)
       <tr>
         <td>{{$state->name}}</td>
-        <td> <a href="states/delete/{{$state->id}}" class="btn btn-xs btn-primary">Delete</a> </td>
+        <td> <a href="delete/{{$state->id}}" class="btn btn-xs btn-primary">Delete</a> </td>
       </tr>
     @endForeach  
     </tbody>

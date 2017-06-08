@@ -11,4 +11,11 @@
 |
 */
 
-Route::get('/', 'StatesController@index');
+Route::get('/', 'StatesController@active');
+Route::get('/active', 'StatesController@active');
+Route::get('active/delete/{id}', 'StatesController@deleteActive');
+
+Route::get('/deleted', 'StatesController@deleted');
+Route::get('deleted/delete/{id}', 'StatesController@forceDelete');
+
+Route::get('/all', 'StatesController@all');
