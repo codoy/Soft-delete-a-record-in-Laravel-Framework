@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Static Top Navbar Example for Bootstrap</title>
+    <title>Laravel soft deleting records</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -23,13 +23,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="active">Active States</a></li>
-            <li><a href="deleted">Deleted States</a></li>
-            <li><a href="all">All States</a></li>
+            <li class="{{ Request::segment(1) == 'active' ? 'active' : Request::segment(1) == '' ? 'active' : '' }}"><a href="{{ url('active') }}">  Active States</a></li>
+            <li class="{{ Request::segment(1) == 'deleted' ? 'active' : '' }}"><a href="{{ url('deleted') }}">Deleted States</a></li>
+            <li class="{{ Request::segment(1) == 'all' ? 'active' : '' }}"><a href="{{ url('all') }}">All States</a></li>
           </ul>
         </div>
       </div>
     </nav>
+
 
     @yield('content')
 
